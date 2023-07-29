@@ -1,0 +1,144 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+
+df = pd.read_csv(r'C:\Users\Username\Downloads\bal_train.csv')
+print (df)
+
+y = df.temperature
+X = df.drop('temperature', axis=1)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y,test_size=0.2)
+print("\nX_train:\n")
+print(X_train)
+print(X_train.shape)
+
+print("\nX_test:\n")
+print(X_test)
+print(X_test.shape)
+
+index_to_keep = [81,82,83,84,85,86,89,90,92,93,94,95,96,97,98,99]
+dz = (X_train).loc[index_to_keep]
+print(dz)
+
+X_train.head()
+X_test.head()
+
+import numpy as np
+
+def RMSE(predict, target):
+    return np.sqrt(((predict - target) ** 2).mean())
+print ('My RMSE: ' + str(RMSE(X_train,X_test)) )
+
+Result:
+My RMSE: a1                  NaN
+a2                  NaN
+a3                  NaN
+a4                  NaN
+a5                  NaN
+a6                  NaN
+a7                  NaN
+a8                  NaN
+irradiation         NaN
+year                NaN
+month               NaN
+day                 NaN
+hour                NaN
+air_temp            NaN
+azimuth             NaN
+cloud_opacity       NaN
+DewpointTemp        NaN
+dhi                 NaN
+dni                 NaN
+ebh                 NaN
+ghi                 NaN
+GtiFixedTilt        NaN
+GtiTracking         NaN
+PrecipitableWater   NaN
+RelativeHumidity    NaN
+SnowWater           NaN
+SurfacePressure     NaN
+WindDirection10m    NaN
+WindSpeed10m        NaN
+zenith              NaN
+AlbedoDaily         NaN
+dtype: float64
+
+def MSE(predict, target):
+    return (((predict - target) ** 2).mean())
+print ('My MSE: ' + str(MSE(X_train,X_test)) )
+
+Result:
+My MSE: a1                  NaN
+a2                  NaN
+a3                  NaN
+a4                  NaN
+a5                  NaN
+a6                  NaN
+a7                  NaN
+a8                  NaN
+irradiation         NaN
+year                NaN
+month               NaN
+day                 NaN
+hour                NaN
+air_temp            NaN
+azimuth             NaN
+cloud_opacity       NaN
+DewpointTemp        NaN
+dhi                 NaN
+dni                 NaN
+ebh                 NaN
+ghi                 NaN
+GtiFixedTilt        NaN
+GtiTracking         NaN
+PrecipitableWater   NaN
+RelativeHumidity    NaN
+SnowWater           NaN
+SurfacePressure     NaN
+WindDirection10m    NaN
+WindSpeed10m        NaN
+zenith              NaN
+AlbedoDaily         NaN
+dtype: float64
+
+def MAE(predict, target):
+    return (((predict - target)).mean())
+print ('My MAE: ' + str(MSE(X_train,X_test)) )
+
+Result:
+My MAE: a1                  NaN
+a2                  NaN
+a3                  NaN
+a4                  NaN
+a5                  NaN
+a6                  NaN
+a7                  NaN
+a8                  NaN
+irradiation         NaN
+year                NaN
+month               NaN
+day                 NaN
+hour                NaN
+air_temp            NaN
+azimuth             NaN
+cloud_opacity       NaN
+DewpointTemp        NaN
+dhi                 NaN
+dni                 NaN
+ebh                 NaN
+ghi                 NaN
+GtiFixedTilt        NaN
+GtiTracking         NaN
+PrecipitableWater   NaN
+RelativeHumidity    NaN
+SnowWater           NaN
+SurfacePressure     NaN
+WindDirection10m    NaN
+WindSpeed10m        NaN
+zenith              NaN
+AlbedoDaily         NaN
+dtype: float64
+
+
+
+
